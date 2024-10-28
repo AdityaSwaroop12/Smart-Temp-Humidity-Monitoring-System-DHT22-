@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "author": "ADITYA SWAROOP",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 48.6, "left": -96.6, "attrs": {} },
+    { "type": "wokwi-lcd1602", "id": "lcd1", "top": -140.57, "left": -89.6, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 13.55,
+      "left": 124.8,
+      "rotate": 180,
+      "attrs": { "value": "1000" }
+    },
+    { "type": "wokwi-dht22", "id": "dht1", "top": 96.3, "left": 311.4, "attrs": {} }
+  ],
+  "connections": [
+    [ "uno:GND.1", "lcd1:K", "black", [ "v-28.8", "h67.5" ] ],
+    [ "uno:GND.1", "lcd1:RW", "black", [ "v-28.8", "h-38.1" ] ],
+    [ "uno:GND.1", "lcd1:VSS", "black", [ "v-28.8", "h0.3" ] ],
+    [ "lcd1:D7", "uno:7", "green", [ "v38.4", "h19.5" ] ],
+    [ "lcd1:D6", "uno:8", "green", [ "v38.4", "h19.4" ] ],
+    [ "lcd1:D5", "uno:9", "green", [ "v38.4", "h19.3" ] ],
+    [ "lcd1:D4", "uno:10", "green", [ "v38.4", "h19.2" ] ],
+    [ "uno:5V", "lcd1:VDD", "red", [ "v28.7", "h-111.4" ] ],
+    [ "uno:5V", "r1:2", "red", [ "v28.7", "h-111.4", "v-249.6" ] ],
+    [ "r1:1", "lcd1:A", "green", [ "v-18.9", "h-107" ] ],
+    [ "lcd1:E", "uno:11", "green", [ "v48", "h57.6" ] ],
+    [ "lcd1:RS", "uno:12", "green", [ "v48", "h67.5" ] ],
+    [ "dht1:GND", "uno:GND.3", "black", [ "v57.6", "h-268.8" ] ],
+    [ "dht1:VCC", "uno:5V", "red", [ "v0" ] ],
+    [ "dht1:SDA", "uno:2", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
